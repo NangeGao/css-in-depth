@@ -18,3 +18,23 @@
 
 ## B.1 Sass
 
+使用Sass之前，需要先确定几件事情。首先是使用哪种实现方案。Sass是用Ruby写的，但这种实现方式在编译大型样式表的时候比较慢，所以建议使用`LibSass`，这是用C/C++实现的Sass编译器。
+
+如果你对JavaScript和Node环境比较熟悉，可以通过npm包管理工具安装node-sass，也可以获取LibSass。如果还没有安装Node.js，可以在[https://nodejs.org](https://nodejs.org)上找到它（免费），按照上面的指导进行下载安装即可。后面会介绍相关的操作命令，但如果你想了解更多npm或者遇到问题需要求助，可以访问[https://docs.npmjs.com/getting-started/](https://docs.npmjs.com/getting-started/)。
+
+### B.1.1 安装Sass
+
+要安装Sass，先在终端中新建一个项目目录，并进入该目录。然后运行下面两条命令：
+
+- `npm init -y`——初始化一个新的npm项目，创建package.json文件。关于该文件的更多信息可以查看第十章（10.1.1节）。
+- `npm install --save-dev node-sass`——安装`node-sass`包，并把它作为开发依赖写入package.json。
+
+> **注意**
+>
+> 在Windows系统中，还需要安装`node-gyp`包。更多信息可以查看[https://github.com/sass/node-sass#install](https://github.com/sass/node-sass#install)。
+
+第二个需要确认的事情是使用哪种语法。Sass支持两种语法：Sass和SCSS。它们的语言特性是一样的，但Sass语法去掉了所有的花括号和分号，严格使用缩进来表示代码结构。比如：
+
+> [p424 代码片断一]
+
+这有点类似于Ruby和Python这样的编程语言，空格是有意义的。SCSS语法使用花括号和分号，所有看起来更像标准CSS。例如：
